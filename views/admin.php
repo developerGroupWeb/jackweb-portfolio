@@ -32,7 +32,7 @@ $messages = GetMessage::findAll();
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <button type="button" class="btn btn-primary">
                     Visitors <span class="badge badge-light"><?=Helpers::get_visitor()?></span>
@@ -48,61 +48,60 @@ $messages = GetMessage::findAll();
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style='margin-bottom: 150px;'>
 
     <?foreach ($messages as $message):?>
-    <div class="content-message-contact mt-4">
+    <div class=" mt-5 row">
 
-        <div class="d-inline">
-            <pre>
-                <img src="/public/images/profile.jpg" style="width:30px; height: 30px; border-radius: 50%"><strong><?=$message['first'].' '.$message['last'].' '.'('.$message['email'].')'?></strong>
-                <span class="text-info" style="font-size: 20px"><?=$message['subject']?></span>
-                <span><?=$message['message']?></span><br/>
-                <i class="text-primary"><?=$message['date']?></i>
-                <span class="text-success" style="font-size: medium; cursor: pointer" id="answer" value="<?=$message['id']?>">Repondre</span>
+        <div class='col-lg-6 offset-lg-3 '>
+            <div class='bg-light p-sm-5 p-4'>
+                <img src="/public/images/profile.jpg" style="width:30px; height: 30px; border-radius: 50%">
+                <strong><?=$message['first'].' '.$message['last'].' '.'('.$message['email'].')'?></strong>
+                <span class="text-info row" style="font-size: 20px"><?=$message['subject']?></span>
+                <span class='row'><?=$message['message']?></span><br/>
+                <i class="text-primary row"><?=$message['date']?></i>
+                <span class="row btn btn-success" style="font-size: medium; cursor: pointer" id="answer" value="<?=$message['id']?>">Repondre</span>
+            </div>
 
-            </pre>
+        </div>
+    
+        <!-- Form answer message -->
+        <div class='col-lg-6 offset-lg-3 d-none mt-4 form-<?=$message['id']?>'>
 
-            <!-- Form answer message -->
-                <div class='col-md-6 offset-md-3 d-none form-<?=$message['id']?>'>
+            <div class="result"></div>
 
-                    <div class="result"></div>
-                    <?= ($validate->message_flash('message')) ? $validate->message_flash('message') : ''?>
-
-                    <div class='row px-4 px-md-0'>
-                        <form method="post" class='col-12' action='' id="form-contact">
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" name="first_name" id="first-name" class="form-control first-name-<?=$message['id']?>" placeholder="Votre Prenom" value="">
-                                    <span class="text-danger error-first-name font-italic font-"><?= $validate->error("first_name")?></span>
-                                </div>
-                                <div class="col">
-                                    <input type="text" name="last_name" id="last-name" class="form-control last-name-<?=$message['id']?>" placeholder="Votre Nom" value="">
-                                    <span class="text-danger error-last-name font-italic"><?= $validate->error("last_name")?></span>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label ></label>
-                                <input type="email" name="email" class="form-control email-<?=$message['id']?>" id="email" placeholder="name@example.com" value="">
-                                <span class="text-danger error-email font-italic"><?= $validate->error("email")?></span>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="subject" class="form-control subject-<?=$message['id']?>" id="subject" placeholder="Quel est le sujet du message?" value="">
-                                <span class="text-danger error-subject font-italic"><?= $validate->error("subject")?></span>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea name="message" class="form-control" placeholder='Votre Message' id="message" rows="3" style="<?= ($validate->error('message')) ? "border-color : red" : ''?>"></textarea>
-                            </div>
-
-                            <button type="submit"  name="submit" class='btn btn-dark text-uppercase px-4'>Envoyer</button>
-                        </form>
+            <?= ($validate->message_flash('message')) ? $validate->message_flash('message') : ''?>
+            <div class='row '>
+                <form method="post" class='col-12' action='' id="form-contact">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" name="first_name" id="first-name" class="form-control first-name-<?=$message['id']?>" placeholder="Votre Prenom" value="">
+                            <span class="text-danger error-first-name font-italic font-"><?= $validate->error("first_name")?></span>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="last_name" id="last-name" class="form-control last-name-<?=$message['id']?>" placeholder="Votre Nom" value="">
+                            <span class="text-danger error-last-name font-italic"><?= $validate->error("last_name")?></span>
+                        </div>
                     </div>
-                </div>
 
+                    <div class="form-group">
+                        <label ></label>
+                        <input type="email" name="email" class="form-control email-<?=$message['id']?>" id="email" placeholder="name@example.com" value="">
+                        <span class="text-danger error-email font-italic"><?= $validate->error("email")?></span>
+                    </div>
 
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-control subject-<?=$message['id']?>" id="subject" placeholder="Quel est le sujet du message?" value="">
+                        <span class="text-danger error-subject font-italic"><?= $validate->error("subject")?></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder='Votre Message' id="message" rows="3" style="<?= ($validate->error('message')) ? "border-color : red" : ''?>"></textarea>
+                    </div>
+
+                    <button type="submit"  name="submit" class='btn btn-dark text-uppercase px-4'>Envoyer</button>
+                </form>
+            </div>
         </div>
     </div>
     <?endforeach;?>
@@ -156,5 +155,6 @@ $messages = GetMessage::findAll();
 
         </div>
     </footer>
+</section>
 </body>
 </html>
