@@ -2,14 +2,14 @@ p{
    font-size:  28px;
 }
 #mathead{
-    background-image: url(images/annie-spratt-QckxruozjRg-unsplash.jpg);
+    background-image: url(../images/annie-spratt-QckxruozjRg-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .img-profil{
-    background-image: url(images/avatar-3637561_960_720.png);
+    background-image: url(../images/avatar-3637561_960_720.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,7 +32,7 @@ p{
 
   /*************************************/
  #about{
-    background-image: url(images/cytonn-photography-ZJEKICY5EXY-unsplash.jpg);
+    background-image: url(../images/cytonn-photography-ZJEKICY5EXY-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,7 +49,7 @@ p{
   /***************************************/
 
   #myprojects{
-    background-image: url(images/goran-ivos-iacpoKgpBAM-unsplash.jpg);
+    background-image: url(../images/goran-ivos-iacpoKgpBAM-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
