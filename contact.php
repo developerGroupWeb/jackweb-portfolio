@@ -1,9 +1,15 @@
 <?$title = 'Contact me'?>
 
+    <?
+    include 'core/Book.php';
+    include 'core/Validator.php';
 
-<? include '../core/treatment.php'?>
 
-<? include '../views/layouts/template.php'?>
+    $validate = new Validator();
+    ?>
+
+
+<? include 'layouts/template.php'?>
 
 
 <section class="" id="about">
@@ -21,7 +27,7 @@
                         <?= ($validate->message_flash('message')) ? $validate->message_flash('message') : ''?>
 
                         <div class='row px-4 px-md-0'>
-                            <form method="post" class='col-12' action='' id="form-contact">
+                            <form method="post" class='col-12' action='tra' id="form-contact">
                                 <div class="row">
                                     <div class="col">
                                         <input type="text" name="first_name" id="first-name" class="form-control" placeholder="Votre Prenom" value="<?= $validate->post('first_name')?>">
@@ -56,9 +62,9 @@
 
                 <div class="row">
                     <div class="mx-auto text-center">
-                        <a href="../index.php" class="btn btn-outline-light mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-2s">Home</a>
-                        <a href="../views/myprojects.php" class="btn btn-warning mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-3s">My projects</a>
-                        <a href="../views/about-me.php" class="btn btn-outline-light px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-4s">About me</a>
+                        <a href="index.php" class="btn btn-outline-light mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-2s">Home</a>
+                        <a href="myprojects.php" class="btn btn-warning mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-3s">My projects</a>
+                        <a href="about-me.php" class="btn btn-outline-light px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-4s">About me</a>
                     </div>
                 </div>
             </div>
@@ -68,4 +74,4 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/public/js/contact.js"></script>
-<? include '../views/layouts/footer.php'?>
+<? include 'layouts/footer.php' ?>

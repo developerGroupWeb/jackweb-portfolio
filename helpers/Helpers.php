@@ -3,7 +3,7 @@
 
 abstract class Helpers
 {
-    protected static $db = '../data/counter.txt';
+    protected static $db = 'data/counter.txt';
 
     static function counter(){
 

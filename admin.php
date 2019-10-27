@@ -1,12 +1,17 @@
 <?php
-include '../helpers/Helpers.php';
-include '../helpers/GetMessage.php';
-include '../core/Book.php';
-include '../core/Validator.php';
+session_start();
+if(isset($_SESSION['code'])){
+
+
+include 'helpers/Helpers.php';
+include 'helpers/GetMessage.php';
+include 'core/Book.php';
+include 'core/Validator.php';
 
 $validate = new Validator();
 
-$messages = GetMessage::findAll();
+$get = new GetMessage('data/messages.json');
+$messages = $get::findAll();
 
 //$answer = GetMessage::find('26102019112607');
 ?>
@@ -158,3 +163,8 @@ $messages = GetMessage::findAll();
 </section>
 </body>
 </html>
+<?
+}else{
+    header('Location:pop.php');
+}
+?>

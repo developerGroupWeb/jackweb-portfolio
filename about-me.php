@@ -1,6 +1,6 @@
 <?$title = 'About me'?>
 
-<? include '../views/layouts/template.php'?>
+<? include 'layouts/template.php'?>
 
 <section class="" id="about">
     <div class="container">
@@ -18,9 +18,9 @@
 
                 <div class="row">
                     <div class="mx-auto text-center">
-                        <a href="../index.php" class="btn btn-outline-light mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-2s">Home</a>
-                        <a href="../views/myprojects.php" class="btn btn-warning mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-3s">My projects</a>
-                        <a href="../views/contact.php" class="btn btn-outline-light px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-4s">Contact me</a>
+                        <a href="index.php" class="btn btn-outline-light mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-2s">Home</a>
+                        <a href="/myprojects.php" class="btn btn-warning mr-2 px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-3s">My projects</a>
+                        <a href="/contact.php" class="btn btn-outline-light px-5 py-2 font-weight-bold text-uppercase mt-3 animated  fadeInUp delay-4s">Contact me</a>
                     </div>
                 </div>
             </div>
@@ -28,4 +28,4 @@
     </div>
 </section>
 
-<? include '../views/layouts/footer.php'?>
+<? include 'layouts/footer.php'?>
