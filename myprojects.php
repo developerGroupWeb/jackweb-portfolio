@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="card-body">
-                            <a href="https://github.com/JackDarkWeb/m-c-t.com" target="_blank" class="btn btn-dark mr-3">In PHP on git</a>
+                            <a href="https://github.com/JackDarkWeb/management.com" target="_blank" class="btn btn-dark mr-3">In PHP on git</a>
                             <a href="https://github.com/developerGroupWeb/Management-Consulting-Int" target="_blank" class="btn btn-dark mr-3">In Laravel on git</a>
                         </div>
                     </div>
